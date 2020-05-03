@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=UTF-8 />
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+<script>
+
+let angle = 0;
+let someImg;
+
+function preload(){
+    someImg = loadImage('rofl.jpg');
+}
+
+function setup(){
+    createCanvas(window.innerWidth,window.innerHeight,WEBGL);
+}
+
+function draw(){
+    // const dx = mouseX - width/2;
+    // const dy = mouseY - height/2;
+    // const v = createVector(dx, dy, 0);
+    // v.div(100);
+    ambientLight(255);
+    // directionalLight(255,0,0,v);
+
+    background(175);
+
+    rotateX(angle);
+    rotateY(angle*.3);
+    rotateZ(angle*1.2);
+
+    noStroke();
+    // ambientMaterial(255);
+    texture(someImg);
+    box(200,200);
+
+
+    angle += .009;
+}
+
+</script>
+</body>
+</html>
